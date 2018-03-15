@@ -7,6 +7,7 @@ const
     axios = require('axios')
     dotenv = require('dotenv')
     mongoose = require('mongoose')
+    User = require('./models/User.js')
     PORT = 3000
 
 app.set('views', `${__dirname}/views`)
@@ -14,6 +15,12 @@ app.set('view engine', 'ejs')
 
 mongoose.connect('mongodb://localhost/Project-Navigator', (err) => {
     console.log(err||"Connected to MongoDB")
+})
+
+app.get('/users/show/:id', (req, res) => {
+    User.findById(req.params.id, (err, thatUser) => {
+        res.send('users show')
+    })
 })
 
 app.listen(PORT, (err) => {
