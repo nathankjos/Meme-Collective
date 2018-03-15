@@ -1,2 +1,2 @@
-# Project-Navigator
-A central hub to share your completed, and current projects
+# Meme-Collective
+A central hub to share your Dank Memes, Yo!
