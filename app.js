@@ -7,6 +7,7 @@ const
     axios = require('axios')
     dotenv = require('dotenv')
     mongoose = require('mongoose')
+    memesRouter =require('./routes/memes.js')
     PORT = 3000
 
 mongoose.connect('mongodb://localhost/Project-Navigator', (err) => {
@@ -21,6 +22,12 @@ app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(ejsLayouts)
+
+app.get('/', (req, res)=>{
+    res.send("This is the root route")
+})
+
+app.use('/memes', memesRouter)
 
 app.listen(PORT, (err) => {
     console.log(err || `Server running on ${PORT}`)
