@@ -10,6 +10,6 @@ module.exports = {
         res.render('memes/new')
     },
     create: (req,res) => {
-        console.log('User create')
+        console.log('meme create')
     }
 }

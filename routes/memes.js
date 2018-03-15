@@ -7,4 +7,4 @@ memesRouter.get("/", memesCtrl.index)
 memesRouter.get("/new", memesCtrl.new)
 memesRouter.post("/", memesCtrl.create)
 
-    module.exports = memesRouter
+module.exports = memesRouter

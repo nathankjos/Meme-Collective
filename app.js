@@ -10,12 +10,14 @@ const
     memesRouter =require('./routes/memes.js')
     PORT = 3000
 
+app.set('views', `${__dirname}/views`)
+app.set('view engine', 'ejs');
+
 mongoose.connect('mongodb://localhost/Project-Navigator', (err) => {
     console.log(err||"Connected to MongoDB")
 })
 
-app.set('views', `${__dirname}/views`)
-app.set('view engine', 'ejs')
+
 
 app.use(express.static(`${__dirname}/public`))
 app.use(logger('dev'))
