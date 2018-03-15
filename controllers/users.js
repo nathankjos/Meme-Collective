@@ -9,5 +9,10 @@ module.exports = {
     },
     create: (req,res) => {
         console.log('User create')
-    }
+    },
+    show: (req, res) => {
+        User.findById(req.params.id, (err, thatUser) => {
+            res.send("User Show")
+        })
+    },
 }
